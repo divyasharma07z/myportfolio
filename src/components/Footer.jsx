@@ -34,13 +34,7 @@ const Footer = () => {
           >
             <FaLinkedin />
           </a>
-          <a
-            href="divyasharma007d@gmail.com"
-            className="text-white hover:text-green-400 transition"
-            aria-label="Email"
-          >
-            <FaEnvelope />
-          </a>
+         
         </div>
       </div>
     </footer>
