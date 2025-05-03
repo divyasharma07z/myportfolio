@@ -17,7 +17,7 @@ const services = [
     tools: "React, Tailwind, Bootstrap", 
     icon: <FaCode />, 
     colors: "from-purple-400 to-pink-500",
-    image: "fe.jpeg"
+    image: "FE.jpg"
   },
   { 
     title: "Backend Development", 
@@ -27,38 +27,19 @@ const services = [
     colors: "from-green-400 to-teal-500",
     image: "be.png"
   },
-  { 
-    title: "UI/UX Design", 
-    desc: "Crafting stunning user interfaces with design thinking.", 
-    tools: "Figma, Adobe XD", 
-    icon: <FaPaintBrush />, 
-    colors: "from-blue-400 to-cyan-500",
-    image: "ui.jpg"
-  },
-  { 
-    title: "Database Management", 
-    desc: "Optimized data storage & retrieval solutions.", 
-    tools: "MongoDB, SQL", 
-    icon: <FaDatabase />, 
-    colors: "from-red-400 to-rose-500",
-    image: "db.png"
-  },
-  { 
-    title: "Full-Stack Development", 
-    desc: "End-to-end web solutions with seamless integration.", 
-    tools: "MERN Stack", 
-    icon: <FaMobileAlt />, 
-    colors: "from-indigo-400 to-purple-500",
-    image: "fs.png"
-  },
+ 
+  
 ];
 
 const MyServices = () => {
   return (
     <div className="min-h-screen px-8 py-20 bg-black text-white flex flex-col items-center">
-      <h1 className="text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-16 leading-tight pt-4 pb-4">
-  My Services
+      <h1 className="text-center text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-8 leading-normal pt-3 pb-3">
+      My Services
 </h1>
+<p className="text-center text-xl text-gray-300 italic mb-12">
+  "Showcasing Creative and High-Impact Web Solutions"
+</p>
 
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-7xl">

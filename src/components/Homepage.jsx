@@ -36,7 +36,7 @@ I'm a passionate and dedicated fresher with hands-on experience in web developme
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 flex-wrap justify-center max-w-3xl"
+        className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 flex-wrap justify-center max-w-full"
       >
        <div className="flex flex-wrap justify-center gap-4">
         <a

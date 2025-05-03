@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+import { FiUser, FiMail, FiMessageCircle } from "react-icons/fi";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -8,92 +9,112 @@ const ContactPage = () => {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (name === "name" && !/^[a-zA-Z\s]*$/.test(value)) return;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus("");
 
-    // Replace with your actual EmailJS credentials
-    const serviceID = "service_830ljof"; // Your EmailJS service ID
-    const templateID = "template_fb1bbyn"; // Your EmailJS template ID
-    const userID = "7Dy7FlO5ZJDE9Iu_h"; // Your EmailJS user ID
+    const serviceID = "service_830ljof";
+    const templateID = "template_fb1bbyn";
+    const userID = "7Dy7FlO5ZJDE9Iu_h";
 
-    // Send the form data to EmailJS
-    emailjs.sendForm(serviceID, templateID, e.target, userID)
+    emailjs
+      .sendForm(serviceID, templateID, e.target, userID)
       .then((result) => {
-        console.log("Message Sent: ", result.text);
-        alert("Your message has been sent!");
-        // Clear form fields
+        setStatus("✅ Your message has been sent!");
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
-        console.log("Error: ", error.text);
-        alert("There was an error sending your message. Please try again.");
-      });
+        setStatus("❌ Failed to send. Try again.");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6 py-16">
-      {/* Header Section */}
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
+    <div className="min-h-screen bg-black flex items-center justify-center px-6 py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-12"
+        transition={{ duration: 0.6 }}
+        className="w-full max-w-2xl bg-white/5 backdrop-blur-md p-10 rounded-3xl shadow-lg border border-white/10"
       >
-        Contact Me 📩
-      </motion.h1>
+        <h1 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-500">
+          Contact Me 📩
+        </h1>
 
-      {/* Contact Form */}
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-gray-900 bg-opacity-70 p-8 rounded-3xl shadow-lg">
-        <div className="mb-6">
-          <label className="block text-gray-300 text-lg mb-2">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-pink-500 focus:ring focus:ring-pink-500"
-            required
-          />
-        </div>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label className="block text-gray-300 text-sm mb-2">Name</label>
+            <div className="flex items-center bg-gray-900 rounded-xl px-4">
+              <FiUser className="text-pink-400 mr-3" />
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-3 bg-transparent text-white focus:outline-none"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+          </div>
 
-        <div className="mb-6">
-          <label className="block text-gray-300 text-lg mb-2">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-500"
-            required
-          />
-        </div>
+          <div>
+            <label className="block text-gray-300 text-sm mb-2">Email</label>
+            <div className="flex items-center bg-gray-900 rounded-xl px-4">
+              <FiMail className="text-blue-400 mr-3" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-3 bg-transparent text-white focus:outline-none"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+          </div>
 
-        <div className="mb-6">
-          <label className="block text-gray-300 text-lg mb-2">Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-green-500 focus:ring focus:ring-green-500"
-            rows="5"
-            required
-          ></textarea>
-        </div>
+          <div>
+            <label className="block text-gray-300 text-sm mb-2">Message</label>
+            <div className="flex items-start bg-gray-900 rounded-xl px-4 py-2">
+              <FiMessageCircle className="text-green-400 mt-3 mr-3" />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full p-3 bg-transparent text-white focus:outline-none resize-none"
+                rows="5"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+          </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-          type="submit"
-          className="w-full py-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white rounded-lg shadow-md hover:opacity-90"
-        >
-          Send Message
-        </motion.button>
-      </form>
+          {status && (
+            <div className="text-sm text-center text-green-400">{status}</div>
+          )}
+
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            type="submit"
+            disabled={loading}
+            className="w-full py-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white font-semibold rounded-xl shadow-md hover:opacity-90 transition duration-300"
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </motion.button>
+        </form>
+      </motion.div>
     </div>
   );
 };

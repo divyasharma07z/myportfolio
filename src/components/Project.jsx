@@ -82,9 +82,16 @@ const Projects = () => {
   return (
     <div className="min-h-screen px-6 py-20 md:py-24 bg-black text-white flex flex-col items-center overflow-visible">
       {/* Heading */}
-      <h1 className="text-center text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-16 leading-normal pt-4 pb-4">
+      <h1 className="text-center text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-8 leading-normal pt-4 pb-4">
+
         My Projects 🚀
       </h1>
+      
+  
+  {/* Tagline */}
+  <p className="text-center text-xl text-gray-300 italic mb-12">
+    "Innovative and Creative Solutions to Enhance Your Digital Experience"
+  </p>
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl">
         {projects.map((project, index) => (

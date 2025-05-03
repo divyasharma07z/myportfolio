@@ -4,10 +4,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: "About Me", link: "#about" },
+    { name: "About Me", link: "#home" },
+    { name: " Skills", link: "#skills" },
     { name: "Services", link: "#services" },
     { name: "Projects", link: "#projects" },
-    { name: "Contact Me", link: "#contact" }
+    { name: "Contact Me", link: "#contact" },
   ];
 
   return (

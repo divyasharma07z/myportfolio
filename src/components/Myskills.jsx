@@ -14,7 +14,7 @@ const skills = [
   { name: "UI/UX", level: "60%", icon: <SiFigma className="text-pink-500" /> },
 ];
 
-const Skills = () => {
+const Myskills = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6 py-10">
       {/* Heading */}
@@ -27,7 +27,7 @@ const Skills = () => {
         My Skills 💻
       </motion.h1>
 
-      <p className="mt-4 text-lg text-gray-400 text-center">
+      <p className="mt-4 text-lg text-gray-400 text-center italic">
         Mastering the latest web technologies.
       </p>
 
@@ -68,4 +68,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Myskills;
