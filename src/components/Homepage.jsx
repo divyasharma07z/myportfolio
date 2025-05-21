@@ -46,7 +46,7 @@ I'm a passionate and dedicated fresher with hands-on experience in web developme
           Contact Me
         </a>
         <a
-          href="divyasharmacv.pdf"
+          href="divyasharmanewcv.pdf"
           className="px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg shadow-lg bg-gradient-to-r from-[#ff7eb3] to-[#85e7ff] text-black hover:shadow-2xl hover:scale-105 transition-all duration-300"
           target="_blank"
           rel="noopener noreferrer"
