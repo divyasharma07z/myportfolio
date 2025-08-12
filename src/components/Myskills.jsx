@@ -10,7 +10,6 @@ const skills = [
   { name: "Bootstrap", level: "80%", icon: <FaBootstrap className="text-purple-500" /> },
   { name: "React", level: "75%", icon: <FaReact className="text-cyan-400" /> },
   { name: "Tailwind CSS", level: "80%", icon: <SiTailwindcss className="text-teal-400" /> },
-  { name: "Node.js", level: "40%", icon: <FaNodeJs className="text-green-500" /> },
   { name: "UI/UX", level: "60%", icon: <SiFigma className="text-pink-500" /> },
 ];
 

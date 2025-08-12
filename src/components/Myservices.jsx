@@ -1,8 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaPaintBrush, FaServer, FaDatabase, FaMobileAlt, FaGlobe } from 'react-icons/fa';
+import { FaCode, FaPaintBrush, FaGlobe } from 'react-icons/fa';
 
 const services = [
+  { 
+    title: "Web Designing", 
+    desc: "Creative, user-focused designs with an eye for detail.", 
+    tools: "UI/UX, Photoshop, Figma", 
+    icon: <FaPaintBrush />, 
+    colors: "from-pink-400 to-red-500",
+    image: "design.png"
+  },
+
   { 
     title: "Web Development", 
     desc: "Modern, responsive, and scalable websites.", 
@@ -19,16 +28,8 @@ const services = [
     colors: "from-purple-400 to-pink-500",
     image: "FE.jpg"
   },
-  { 
-    title: "Backend Development", 
-    desc: "Secure, scalable, and efficient backend systems.", 
-    tools: "Node.js, Express.js", 
-    icon: <FaServer />, 
-    colors: "from-green-400 to-teal-500",
-    image: "be.png"
-  },
- 
- 
+
+  
   
 ];
 
@@ -36,12 +37,11 @@ const MyServices = () => {
   return (
     <div className="min-h-screen px-8 py-20 bg-black text-white flex flex-col items-center">
       <h1 className="text-center text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-8 leading-normal pt-3 pb-3">
-      My Services
-</h1>
-<p className="text-center text-xl text-gray-300 italic mb-12">
-  "Showcasing Creative and High-Impact Web Solutions"
-</p>
-
+        My Services
+      </h1>
+      <p className="text-center text-xl text-gray-300 italic mb-12">
+        "Showcasing Creative and High-Impact Web Solutions"
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-7xl">
         {services.map((service, index) => (

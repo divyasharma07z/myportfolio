@@ -26,8 +26,10 @@ const HomePage = () => {
           Hello, I'm Divya Sharma
         </motion.h1>
         <p className="text-pretty md:text-lg font-light text-gray-300 leading-7 md:leading-8 max-w-xl mx-auto">
-           Aspiring Full Stack Developer
-I'm a passionate and dedicated fresher with hands-on experience in web development through projects and internship. I have knowledge of HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, React, and Node.js, and I enjoy creating clean, responsive, and user-friendly websites. I also have a strong interest in UI/UX design and love bringing creative ideas to life. I'm eager to learn, grow, and contribute to exciting development projects.
+        Aspiring Web Designer
+I am a passionate and creative fresher aiming to build my career as a Web Designer. I have strong knowledge of frontend development with skills in HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, and React, along with a keen interest in UI/UX design. I enjoy creating clean, responsive, and visually engaging websites, and I’m proficient in Photoshop and Figma for designing user-friendly interfaces. I’m eager to grow, learn, and contribute my creativity and technical skills to innovative web design projects.
+
+
         </p>
       </header>
 
@@ -46,7 +48,7 @@ I'm a passionate and dedicated fresher with hands-on experience in web developme
           Contact Me
         </a>
         <a
-          href="DivyaSharmacv.pdf"
+          href="cv.pdf"
           className="px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg shadow-lg bg-gradient-to-r from-[#ff7eb3] to-[#85e7ff] text-black hover:shadow-2xl hover:scale-105 transition-all duration-300"
           target="_blank"
           rel="noopener noreferrer"
